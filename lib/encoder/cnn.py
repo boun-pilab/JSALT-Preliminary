@@ -1,0 +1,1 @@
+from transformers import Wav2Vec2Processor, Wav2Vec2Adap
