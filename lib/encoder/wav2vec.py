@@ -596,7 +596,7 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
         target_features: torch.FloatTensor,
         negative_features: torch.FloatTensor,
         predicted_features: torch.FloatTensor,
-        temperature: int = 0.1,
+        temperature: float = 0.1,
     ):
         """
         Compute logits for contrastive loss based using cosine similarity as the distance measure between
@@ -618,7 +618,7 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
         self,
         input_values: Optional[torch.Tensor],
         attention_mask: Optional[torch.Tensor] = None,
-        mask_time_indices: Optional[torch.BoolTensor] = None,
+        mask_time_indices: Optional[torch.BoolTensor] = None | torch.BoolTensor,
         sampled_negative_indices: Optional[torch.BoolTensor] = None,
         output_attentions: Optional[bool] = None,
         output_hidden_states: Optional[bool] = None,
